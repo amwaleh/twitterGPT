@@ -2,10 +2,10 @@ import tweepy
 import os
 import openai
 
-api_key = "Gs2HRsTExb1btML167OE4J4uW"
-api_secrets = "miNXL3RYPO1wLjKUiWBzBI5BmbCcvQizU71QPGQhBHrrBOHc40"
-access_token = "49934831-ItL4sClSXyHtx9TtlsoegzU4NEu3AjcAuBQgbrqJA"
-access_secret = "001VbujFljF1Hn3niaFxnlHatl3pUWYJ30qRJtXeWbL5z"
+api_key = os.environ['API_KEY']
+api_secrets = os.environ['API_SECRET']
+access_token = os.environ['ACCESS_TOKEN']
+access_secret = os.environ['ACCESS_SECRET']
 
 
 # Authenticate to Twitter
@@ -18,7 +18,7 @@ my_secret = os.environ['OPENAI_KEY']
 # Load your API key from an environment variable or secret management service
 openai.api_key =my_secret 
 response = openai.Completion.create(model="text-davinci-003", 
-                                    prompt="soko headline, kenya", 
+                                    prompt="hbr todays article, conclude by providing  link", 
                                     temperature=0.5,
                                     max_tokens=2048)
 result = response.get("choices")[0].get("text")
