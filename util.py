@@ -1,5 +1,5 @@
 
-def tokenize_text(result, max_length=280):
+def tokenize_text(result, max_length=250):
   orig_string = result
   list_of_lines = []
 
